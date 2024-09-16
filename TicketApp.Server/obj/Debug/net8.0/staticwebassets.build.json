@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "Pkn+9v98aKHSzZLBfQqL58ddUysdcx57SmKpmcVVqWM=",
+  "Source": "TicketApp.Server",
+  "BasePath": "_content/TicketApp.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\steel\\source\\repos\\TicketApp\\ticketapp.client\\ticketapp.client.esproj",
+      "Version": 2,
+      "Source": "ticketapp.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

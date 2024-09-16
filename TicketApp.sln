@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketApp.Server", "TicketApp.Server\TicketApp.Server.csproj", "{05B5F296-F2A6-47C1-9BB7-AA627FB2B4AE}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ticketapp.client", "ticketapp.client\ticketapp.client.esproj", "{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05B5F296-F2A6-47C1-9BB7-AA627FB2B4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B5F296-F2A6-47C1-9BB7-AA627FB2B4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B5F296-F2A6-47C1-9BB7-AA627FB2B4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B5F296-F2A6-47C1-9BB7-AA627FB2B4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FC41C3-592C-4AF1-B12C-C12F21C94E3C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2DACA36-4AAC-484F-9A3D-857108CAE360}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+C:\Users\steel\source\repos\TicketApp\ticketapp.client\obj\Debug\ticketapp.client.esproj.CoreCompileInputs.cache
