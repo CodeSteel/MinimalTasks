@@ -1,4 +1,4 @@
-# Ticket App
+# MinimalTasks
 
 A minimal and industry-ready task management web-application made with ASP.NET & React. 
 
