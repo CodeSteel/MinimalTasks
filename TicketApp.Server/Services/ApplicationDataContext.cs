@@ -11,6 +11,8 @@ public class ApplicationDataContext : IdentityDbContext<User, IdentityRole<Guid>
     
     public DbSet<User> Users { get; set; }
     public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<Message> Messages { get; set; }
+    public DbSet<AppStat> AppStats { get; set; }
     
     public ApplicationDataContext(DbContextOptions<ApplicationDataContext> options, IConfiguration configuration) : base(options)
     {
@@ -38,6 +40,16 @@ public class ApplicationDataContext : IdentityDbContext<User, IdentityRole<Guid>
             ent.HasOne(t => t.Assignee)
                 .WithMany(u => u.AssignedTickets)
                 .HasForeignKey(t => t.AssigneeId);
+            ent.HasMany(t => t.Messages)
+                .WithOne(m => m.Ticket)
+                .HasForeignKey(m => m.TicketId);
+        });
+
+        builder.Entity<Message>(ent =>
+        {
+            ent.HasOne(m => m.Ticket)
+                .WithMany(t => t.Messages)
+                .HasForeignKey(m => m.TicketId);
         });
         
         base.OnModelCreating(builder);

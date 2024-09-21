@@ -12,8 +12,8 @@ using TicketApp.Server.Services;
 namespace TicketApp.Server.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    [Migration("20240916015142_addTicket")]
-    partial class addTicket
+    [Migration("20240921025131_addAdminToUser")]
+    partial class addAdminToUser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -156,11 +156,53 @@ namespace TicketApp.Server.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TicketApp.Server.Models.Ticket", b =>
+            modelBuilder.Entity("TicketApp.Server.Models.AppStat", b =>
+                {
+                    b.Property<int>("AppStatType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("AppStatType");
+
+                    b.ToTable("AppStats");
+                });
+
+            modelBuilder.Entity("TicketApp.Server.Models.Message", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasMaxLength(20000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TicketId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("TicketApp.Server.Models.Ticket", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid?>("AssigneeId")
                         .HasColumnType("uniqueidentifier");
@@ -168,24 +210,18 @@ namespace TicketApp.Server.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(3500)
-                        .HasColumnType("nvarchar(3500)");
-
                     b.Property<Guid?>("OwnerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Priority")
+                    b.Property<int?>("Priority")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("Status")
                         .HasColumnType("int");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                    b.Property<string>("Subject")
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
 
                     b.HasKey("Id");
 
@@ -204,6 +240,9 @@ namespace TicketApp.Server.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Admin")
+                        .HasColumnType("bit");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -313,6 +352,25 @@ namespace TicketApp.Server.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TicketApp.Server.Models.Message", b =>
+                {
+                    b.HasOne("TicketApp.Server.Models.User", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TicketApp.Server.Models.Ticket", "Ticket")
+                        .WithMany("Messages")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("Ticket");
+                });
+
             modelBuilder.Entity("TicketApp.Server.Models.Ticket", b =>
                 {
                     b.HasOne("TicketApp.Server.Models.User", "Assignee")
@@ -326,6 +384,11 @@ namespace TicketApp.Server.Migrations
                     b.Navigation("Assignee");
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("TicketApp.Server.Models.Ticket", b =>
+                {
+                    b.Navigation("Messages");
                 });
 
             modelBuilder.Entity("TicketApp.Server.Models.User", b =>

@@ -48,12 +48,11 @@ export default defineConfig({
                 secure: false,
                 changeOrigin: true
             },
-            '/api/Agent/GetAllAgents': {
+            '/ticket-hub': {
                 target: 'https://localhost:7152/',
-                secure: true,
-                ws: true,
+                secure: false,
                 changeOrigin: true
-            },
+            }
         },
         port: 5173,
         https: {

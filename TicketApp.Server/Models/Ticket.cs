@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.Identity.Client;
+using shortid;
+using shortid.Configuration;
 
 namespace TicketApp.Server.Models;
 
@@ -12,63 +15,57 @@ public enum TicketPriority
 
 public enum TicketStatus
 {
-    Queued,
-    Assigned,
-    InProgress,
-    UAT,
-    PendingRelease,
-    Deployed
+    Open,
+    Closed
 }
 
 public class Ticket
 {
     [Key]
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public string Id { get; init; } = ShortId.Generate(new GenerationOptions(false, false, 8));
 
-    [MaxLength(30)] 
-    public string Title { get; set; }
+    [MaxLength(80)] 
+    public string? Subject { get; set; }
     
-    [MaxLength(3500)]
-    public string Description { get; set; }
+    public TicketStatus? Status { get; set; }
     
-    public TicketStatus Status { get; set; }
-    
-    public TicketPriority Priority { get; set; }
-    
-    public DateTime CreatedAt { get; set; }
+    public TicketPriority? Priority { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
     
     [ForeignKey("OwnerId")]
     public User? Owner { get; set; } = null!;
-    public Guid? OwnerId { get; set; }
+    public Guid? OwnerId { get; set; } = null!;
     
     [ForeignKey("AssigneeId")]
     public User? Assignee { get; set; } = null!;
-    public Guid? AssigneeId { get; set; }
+    public Guid? AssigneeId { get; set; } = null!;
+    
+    public IEnumerable<Message> Messages { get; set; } = new List<Message>();
 
     public Ticket()
     {
-        Title = string.Empty;
-        Description = string.Empty;
-        Status = TicketStatus.Queued;
+        Subject = string.Empty;
+        Status = TicketStatus.Open;
         Priority = TicketPriority.Low;
         CreatedAt = DateTime.MinValue;
     }
     
     public Ticket(Ticket ticket)
     {
-        Title = ticket.Title;
-        Description = ticket.Description;
+        Subject = ticket.Subject;
         Status = ticket.Status;
         Priority = ticket.Priority;
     }
 
     public void Update(Ticket ticket)
     {
-        Title = ticket.Title;
-        Description = ticket.Description;
+        if (!string.IsNullOrEmpty(ticket.Subject))
+        {
+            Subject = ticket.Subject;
+        }
         Status = ticket.Status;
         Priority = ticket.Priority;
-        Owner = ticket.Owner;
-        Assignee = ticket.Assignee;
+        AssigneeId = ticket.Assignee?.Id;
     }
 }

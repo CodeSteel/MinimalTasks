@@ -32,7 +32,6 @@ export default function LoginRegisterForm(props: {startOnLogin: boolean})
         confirmPassword: ""
     });
     const [getError, setError] = useState<string[]>([]);
-    
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
@@ -43,12 +42,6 @@ export default function LoginRegisterForm(props: {startOnLogin: boolean})
         {
             setError((err) => [...err, "* No email provided."]);
             shouldHandleLogin = false;
-        } else {
-            // if (!IsEmailValid(loginForm.email))
-            // {
-            //     setError((err) => [...err, "* Email not valid."]);
-            //     shouldHandleLogin = false;
-            // }
         }
         
         if (loginForm.password === "")

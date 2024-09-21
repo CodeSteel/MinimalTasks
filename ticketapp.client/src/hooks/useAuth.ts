@@ -1,11 +1,22 @@
 import {useEffect, useState} from "react";
 
+export interface AuthResponse
+{
+    id: string,
+    email: string,
+    username: string,
+    hasAuth: boolean,
+    role: string
+}
+
 export default function useAuth()
 {
-    const [authResponse, setAuthResponse] = useState({
+    const [authResponse, setAuthResponse] = useState<AuthResponse>({
+        id: "",
         email: "",
         username: "",
-        hasAuth: false
+        hasAuth: false,
+        role: ""
     });
     const [isLoading, setIsLoading] = useState(true);
     
@@ -31,5 +42,5 @@ export default function useAuth()
         })
     }
     
-    return { ...authResponse, logout, isLoading };
+    return { authResponse, logout, isLoading };
 }

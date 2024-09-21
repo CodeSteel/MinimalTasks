@@ -12,10 +12,10 @@ export default function LoadSpinner()
     return (
         <div className="m-auto">
             <SquareLoader
-                color="#FFF"
+                color="#000"
                 loading={true}
                 cssOverride={override}
-                size={25}
+                size={30}
                 aria-label="Loading Spinner"
                 data-testid="loader"
             />

@@ -10,19 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@faker-js/faker": "^9.0.1",
+    "@mui/material": "^6.1.0",
+    "@mui/x-charts": "^7.18.0",
+    "@tanstack/react-table": "^8.20.5",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "react": "^18.3.1",
     "react-cookie": "^7.2.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.2",
-    "react-spinners": "^0.14.1"
+    "react-spinners": "^0.14.1",
+    "sass": "^1.78.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/node": "^18.18.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/react-table": "^7.7.20",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",

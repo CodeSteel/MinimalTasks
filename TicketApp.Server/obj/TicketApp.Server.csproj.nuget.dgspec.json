@@ -84,6 +84,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "shortid": {
+              "target": "Package",
+              "version": "[4.0.0, )"
             }
           },
           "imports": [
