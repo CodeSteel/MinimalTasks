@@ -1,6 +1,6 @@
 # MinimalTasks
 
-A minimal and industry-ready task management web-application made with ASP.NET & React. 
+A minimal and industry-ready task management web-application made with ASP.NET & React. Designed for customers to be the users (create new tasks, set the priority) and developers to be the admins (do the task, close when finished). 
 
 ## Features
 
