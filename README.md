@@ -7,12 +7,12 @@ A minimal and industry-ready task management web-application made with ASP.NET &
 * User registration/login.
 * Admin role for special access & actions.
 * Data tables with easy-to-use filtering.
-* Tickets table displaying all tickets.
+* Tasks table displaying all tasks.
 * Users table displaying all users and their roles.
-* Users can Create or Delete their own tickets.
-* Admins can Delete or Update the Status, Priority, & Assignee of any ticket.
-* Each ticket stores a conversation of messages.
-* Edit Ticket side bar component for easy editing access.
+* Users can Create or Delete their own tasks.
+* Admins can Delete or Update the Status, Priority, & Assignee of any task.
+* Each task stores a conversation of messages.
+* Edit Task side bar component for easy editing access.
 * Responsive UI Design.
 
 ## Tech Stack
@@ -31,13 +31,13 @@ A minimal and industry-ready task management web-application made with ASP.NET &
 ### Table Filtering / Admin users Selection Menu
 ![image](https://github.com/user-attachments/assets/c4ed84ce-b555-4679-9c02-df59c086293e)
 
-### Ticket Page
+### Task Page
 ![image](https://github.com/user-attachments/assets/837eb10f-c22d-4d51-95eb-a073685c9f16)
 
 ### Users Page (with Filtering)
 ![image](https://github.com/user-attachments/assets/df733cfe-98a0-466c-9d2c-0462081d8c72)
 
-### Create Ticket Page
+### Create Task Page
 ![image](https://github.com/user-attachments/assets/536800e0-e1da-4a81-9eda-abda0d97b26b)
 
 ### Login/Register Page
