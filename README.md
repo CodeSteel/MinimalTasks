@@ -23,22 +23,23 @@ A minimal and industry-ready task management web-application made with ASP.NET &
 * .NET 8.0
 
 ### Admin Dashboard
-![image](https://github.com/user-attachments/assets/146c1981-61f9-47d4-bf45-70e2348907e0)
+![image](https://github.com/user-attachments/assets/208f1869-b2df-43d4-985b-d14aa118c3e4)
 
 ### Non-Admins Dashboard
-![image](https://github.com/user-attachments/assets/eae75726-92ac-4131-b16f-de614322f4c5)
+![image](https://github.com/user-attachments/assets/967ec8b0-5940-4d34-b5b2-24a65d8e50e5)
 
-### Table Filtering / Admin users Selection Menu
-![image](https://github.com/user-attachments/assets/c4ed84ce-b555-4679-9c02-df59c086293e)
+### Table Filtering / Assignee Selection Menu
+![image](https://github.com/user-attachments/assets/ccee2ea4-8fda-4e35-807f-9b3de6ab8e21)
 
 ### Task Page
-![image](https://github.com/user-attachments/assets/837eb10f-c22d-4d51-95eb-a073685c9f16)
+![image](https://github.com/user-attachments/assets/d9eed586-5423-4e15-86a7-40fa8dcb28d3)
 
 ### Users Page (with Filtering)
-![image](https://github.com/user-attachments/assets/df733cfe-98a0-466c-9d2c-0462081d8c72)
+![image](https://github.com/user-attachments/assets/8311f959-4644-495c-a73a-965985af291b)
 
 ### Create Task Page
-![image](https://github.com/user-attachments/assets/536800e0-e1da-4a81-9eda-abda0d97b26b)
+![image](https://github.com/user-attachments/assets/8a840103-adde-4ed4-a4eb-ddbf195fa7d9)
 
 ### Login/Register Page
-![image](https://github.com/user-attachments/assets/807fba00-45e5-4ec9-b48d-17a260863ca2)
+![image](https://github.com/user-attachments/assets/cf504c99-109e-4e58-b92d-05b66e0888e1)
+
