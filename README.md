@@ -1,6 +1,6 @@
 # Ticket App
 
-A minimal and industry-ready task mangement web-application made with ASP.NET & React. 
+A minimal and industry-ready task management web-application made with ASP.NET & React. 
 
 ## Features
 
