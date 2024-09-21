@@ -2,6 +2,10 @@
 
 A minimalistic industry-ready task management web-application made with ASP.NET & React. Designed for customers to be the users (create new tasks, set the priority) and developers to be the admins (do the task, close when finished). 
 
+Development Time
+
+[![wakatime](https://wakatime.com/badge/user/2d870dab-4a32-4b61-92e1-e72e79bac1da/project/d11f3ff7-b254-474f-b978-7e45c418ce27.svg)](https://wakatime.com/badge/user/2d870dab-4a32-4b61-92e1-e72e79bac1da/project/d11f3ff7-b254-474f-b978-7e45c418ce27)
+
 ## Features
 
 * User registration/login.
