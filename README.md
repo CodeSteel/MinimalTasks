@@ -27,9 +27,12 @@ Development Time
 * .NET 8.0
 
 ### Admin Dashboard
+![image](https://github.com/user-attachments/assets/65d457fe-adf8-44f6-b3c8-a9bc81adbe5c)
+
+### Admin Task List
 ![image](https://github.com/user-attachments/assets/208f1869-b2df-43d4-985b-d14aa118c3e4)
 
-### Non-Admins Dashboard
+### User Task List
 ![image](https://github.com/user-attachments/assets/967ec8b0-5940-4d34-b5b2-24a65d8e50e5)
 
 ### Table Filtering / Assignee Selection Menu
